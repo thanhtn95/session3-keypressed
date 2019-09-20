@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="doReady()">
+<img id="monka" src="MonkaH.png" style="position: absolute; left: 0; top: 0;" height="200" width="160">
+</body>
+<script>
+    function moveTop() {
+        let e = document.getElementById("monka");
+        e.style.top = parseInt(e.style.top) - 10 + "px";
+    }
+
+    function moveBot() {
+        let e = document.getElementById("monka");
+        e.style.top = parseInt(e.style.top) + 10 + "px";
+    }
+
+    function moveLeft() {
+        let e = document.getElementById("monka");
+        e.style.left = parseInt(e.style.left) - 10 + "px";
+    }
+
+    function moveRight() {
+        let e = document.getElementById("monka");
+        e.style.left = parseInt(e.style.left) + 10 + "px";
+    }
+
+    function move(evt) {
+        switch (evt.keyCode) {
+            case 38:
+                moveTop();
+                break;
+            case 37:
+                moveLeft();
+                break;
+            case 39:
+                moveRight();
+                break;
+            case 40:
+                moveBot()
+        }
+    }
+
+    function doReady() {
+        window.addEventListener("keydown", move)
+    }
+</script>
+</html>
